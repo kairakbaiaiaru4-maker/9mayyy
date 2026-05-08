@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: whitesmoke;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+h2{
+    font-size: 3em;
+    color: brown;
+    margin: 15px 0;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* расстояние между кнопками */
+    margin-top: 50px;
+}
+
+button{
+    width: 150px;
+    height: 50px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* ДА */
+.yes-btn {
+    background: brown;
+    color: white;
+}
+
+/* НЕТ */
+.no-btn {
+    background: black;
+    color: white;
+}
+
+/* эффект наведения */
+button:hover {
+    transform: scale(1.1);
+}   
+/* ЭКРАН ДОСТУП РАЗРЕШЁН */
+
+.access-screen {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #1b5e20, #000000, #4e0000);
+    background-size: 400% 400%;
+    animation: bgMove 8s ease infinite;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 30px;
+}
+
+/* движение фона */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* заголовок */
+.access-screen h1 {
+    font-size: 4em;
+    color: gold;
+    text-shadow:
+        0 0 10px orange,
+        0 0 20px red,
+        0 0 40px gold;
+
+    animation: pulse 1.5s infinite;
+}
+
+/* пульс */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+/* карточка */
+.card {
+    margin-top: 30px;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+    padding: 30px;
+
+    max-width: 500px;
+
+    box-shadow:
+        0 0 20px rgba(255,0,0,0.5),
+        0 0 40px rgba(255,165,0,0.3);
+}
+
+/* мемный текст */
+.meme {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #ffd54f;
+}
+
+/* информация */
+.info {
+    margin: 12px 0;
+    font-size: 1.1em;
+}
+
+/* кнопка */
+.card button {
+    margin-top: 25px;
+    width: 220px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+}
+
+.card button:hover {
+    transform: scale(1.15) rotate(-2deg);
+    background: orange;
+}
+
+/* мемная картинка */
+.card img {
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 15px;
+
+    animation: shake 2s infinite;
+}
+
+/* тряска */
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.main-photo {
+    width: 320px;
+    max-width: 90%;
+    border-radius: 20px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+    animation: photoShow 1s ease;
+}
+
+@keyframes photoShow {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
